@@ -1,0 +1,136 @@
+<p>
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+</p>
+<div class="jumbtron">
+</div>
+
+<div class="order-labels-options">
+  <div class="option-label">
+    <div class="img-option">
+      <img src="/assets/img/stickers.png" id="sticker-img">
+    </div>
+    <div class="button-option">
+      <button class="button-option-label">Order Custom Labels</button>
+    </div>
+  </div>
+  <div class="option-label">
+    <div class="img-option">
+      <img src="/assets/img/box-sticker.png" id="sticker-img">
+    </div>
+    <div class="button-option">
+      <button class="button-option-label">Order Custom Tape</button>
+    </div>
+  </div>
+  <div class="option-label">
+    <div class="img-option">
+      <img src="/assets/img/premade-sticker.png" id="premade-sticker-img">
+    </div>
+    <div class="button-option">
+      <button class="button-option-label">Order Premade</button>
+    </div>
+  </div>
+</div>
+
+<div class="video-section">
+  <div class="video-content">
+    <iframe width="680" height="430" src="https://www.youtube.com/embed/EIwJkM026sE"></iframe>
+  </div>
+  <div class="video-content" id="video-text">
+    <h1 id="text-title">Easy online ordering</h1>
+    <p id="video-paragraph">Labelin.us is the fastest and easiest way to order custom-printed products. Order in a few minutes and we'll turn your designs and illustrations into custom stickers, labels, and packaging in days. We offer free online proofs, free shipping, and fast turnaround.</p>
+    <button class="labelin-button">View examples</button>
+  </div>
+  <div></div>
+</div>
+
+<div class="carrousel-section">
+  <div>
+    <h1 class="section-title">Featured Labels</h1>
+  </div>
+  <carousel 
+  [width]="'100%'"
+  [cellWidth]="475" 
+  [height]="400" 				
+  [autoplay]="true"
+  [margin]="5">
+    <div class="carousel-cell">
+        <img src="/assets/img/carrousel/carrousel1.jpeg">
+    </div>
+    <div class="carousel-cell">
+      <img src="/assets/img/carrousel/carrousel2.jpeg">
+    </div>
+    <div class="carousel-cell">
+      <img src="/assets/img/carrousel/carrousel3.jpeg">
+    </div>
+    <div class="carousel-cell">
+      <img src="/assets/img/carrousel/carrousel4.jpeg">
+    </div>
+    <div class="carousel-cell">
+      <img src="/assets/img/carrousel/carrousel5.jpeg">
+    </div>
+    <div class="carousel-cell">
+      <img src="/assets/img/carrousel/carrousel6.jpeg">
+    </div>
+    <div class="carousel-cell">
+      <img src="/assets/img/carrousel/carrousel7.jpeg">
+    </div>
+</carousel>
+</div>
+
+<div class="how-to-order-section">
+  <div class="how-to-order-title">
+    <h1 class="section-title">How to Order</h1>
+  </div>
+  <div class="order-steps-section">
+    <div class="order-step">
+      <img src="/assets/img/order-steps/choose-shape.png">
+      <span class="step-title">1. Choose Shape</span>
+    </div>
+    <div class="order-step">
+      <img src="/assets/img/order-steps/pick-material.png">
+      <span class="step-title">2. Pick Material</span>
+    </div>
+    <div class="order-step">
+      <img src="/assets/img/order-steps/set-size.png">
+      <span class="step-title">3. Set Size</span>
+    </div>
+    <div class="order-step">
+      <img src="/assets/img/order-steps/set-quantity.png">
+      <span class="step-title">4. Select Quantity</span>
+    </div>
+    <div class="order-step">
+      <img src="/assets/img/order-steps/upload.png">
+      <span class="step-title">5. Upload Image</span>
+    </div>
+  </div>
+  <div class="how-to-order-button">
+    <button class="labelin-button">Create your label</button>
+  </div>
+</div>
+
+<div class="contact-form-section">
+  <div class="how-to-order-title">
+    <h1 class="section-title">Have Questions?</h1>
+  </div>
+  <div class="contact-paragraph-section">
+    <p id="contact-paragraph">Please feel free to contact us. Our label experts will be happy to assist you</p>
+  </div>
+  <div class="contact-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Outline form field</mat-label>
+      <input matInput placeholder="First Name">
+    </mat-form-field>
+  </div>
+</div>
