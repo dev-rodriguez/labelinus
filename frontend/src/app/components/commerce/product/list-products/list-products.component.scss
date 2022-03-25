@@ -1,0 +1,12 @@
+.container-list-products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.element-product-card {
+    display: flex;
+    width: 25%;
+    margin-bottom: 40px;
+}
