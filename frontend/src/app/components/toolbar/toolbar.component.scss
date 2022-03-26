@@ -1,0 +1,30 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+mat-toolbar {
+    background-color: white;
+    margin-bottom: 15px;
+}
+
+.container-logo {
+    margin-top: 15px
+}
+
+.toolbar-divider {
+    background-color: #303437;
+    height: 1.5px;
+}
+
+.toolbar-links{
+    display: flex;
+    flex-direction: row;
+}
+.toolbar-link {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    &:hover {
+        cursor: pointer;
+    }
+}
