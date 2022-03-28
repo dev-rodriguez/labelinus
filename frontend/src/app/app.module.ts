@@ -16,6 +16,8 @@ import { ProductDetailsComponent } from './components/commerce/product/product-d
 import { CartIconComponent } from './components/commerce/cart/cart-icon/cart-icon.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { HomeComponent } from './components/home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularMaterialModule } from './angular-material/angular-material.module';
 
 
 const appRoutes: Routes = [
@@ -38,12 +40,14 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatFormFieldModule,
+    // MatToolbarModule,
+    // MatIconModule,
+    // MatButtonModule,
+    // MatFormFieldModule,
+    AngularMaterialModule,
     IvyCarouselModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }
