@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
+import { Product } from '../interfaces/product';
   
 
 @Injectable({
@@ -10,7 +11,7 @@ import { environment } from '../../environments/environment';
 })
 export class CommerceService {
 
-  private commerceURL: string = environment.commerceURL
+  private commerceURL: string = environment.commerceURL + '/products'
   private commerceKey: string = environment.commerceKey
 
   constructor(private http: HttpClient) { }
