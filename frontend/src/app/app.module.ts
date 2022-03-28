@@ -5,8 +5,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDividerModule} from '@angular/material/divider';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { HttpClientModule } from '@angular/common/http';
+import {MatBadgeModule} from '@angular/material/badge';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,12 +18,15 @@ import { ProductDetailsComponent } from './components/commerce/product/product-d
 import { CartIconComponent } from './components/commerce/cart/cart-icon/cart-icon.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { HomeComponent } from './components/home/home.component';
+import { CartDetailsComponent } from './components/commerce/cart/cart-details/cart-details.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'premade-products', component: ListProductsComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'cart', component: CartDetailsComponent}
 ];
 
 
@@ -33,7 +38,9 @@ const appRoutes: Routes = [
     ProductDetailsComponent,
     CartIconComponent,
     ToolbarComponent,
-    HomeComponent
+    HomeComponent,
+    CartDetailsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -42,11 +49,12 @@ const appRoutes: Routes = [
     MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatBadgeModule,
+    MatDividerModule,
     IvyCarouselModule,
     HttpClientModule,
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true }
+      appRoutes
     )
   ],
   providers: [],
