@@ -1,5 +1,6 @@
-<button mat-icon-button>
-    <mat-icon><span class="material-icons-outlined">
+<button mat-icon-button [routerLink]="['/cart']">
+    <mat-icon matBadge={{cartBadgeCounter}} matBadgeColor="warn"><span class="material-icons-outlined">
       shopping_cart
-      </span></mat-icon>
+      </span>
+    </mat-icon>
   </button>
