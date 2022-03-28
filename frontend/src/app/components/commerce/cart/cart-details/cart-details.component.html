@@ -1,0 +1,37 @@
+<div class="container-cart">
+    <h1 class="cart-title">Shopping Cart</h1>
+    <span class="cart-subtitle">You have {{cart.total_items}} items in your cart</span>
+    <div class="cart-items">
+        <div class="items">
+            <div *ngFor="let product of products" class="cart-item">
+                <div class="cart-item-img-container">
+                    <img class="cart-item-img" src={{product.imageUrl}}>
+                </div>
+                <div class="cart-item-info-container">
+                    <div class="cart-item-info-details">
+                        <span>{{product.name}}</span>
+                    </div>   
+                    <div class="cart-item-info-actions">
+                        <div class="cart-item-info-quantity">
+                            <span>2</span>
+                        </div>
+                        <div class="cart-item-info-price">
+                            <span>{{product.price}}</span>
+                        </div>
+                        <div class="cart-item-info-delete-button">
+                            <span class="material-icons">
+                                delete
+                            </span>
+                        </div>
+                    </div>         
+                </div>
+            </div>
+        </div>
+        <div class="checkout">
+            <span class="summary">Summary</span>
+            <mat-divider></mat-divider>
+            <p>Estimate Shipping and Tax</p>
+            <p>Enter your destination to get a shipping estimate.</p>
+        </div>
+    </div>
+</div>
