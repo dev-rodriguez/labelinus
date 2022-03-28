@@ -1,6 +1,7 @@
 import { Component, OnInit , Input } from '@angular/core';
 import { Product } from 'src/app/interfaces/product';
 import { CommerceService } from 'src/app/services/commerce.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-list-products',
@@ -10,7 +11,10 @@ import { CommerceService } from 'src/app/services/commerce.service';
 export class ListProductsComponent implements OnInit {
 
   public products: Product[] = []
-  constructor(private commerceService: CommerceService) { }
+
+  constructor(
+    private commerceService: CommerceService, 
+    private cart: CartService) { }
 
   ngOnInit(): void {
     this.commerceService.listProducts()
@@ -18,11 +22,13 @@ export class ListProductsComponent implements OnInit {
       console.log(response)
       for (let i = 0; i < response.data.length; i++) {
         let product: Product = {
+          id: '',
           name: '',
           description: '',
           price: '',
           imageUrl: ''
         }
+        product.id = response.data[i].id
         product.name = response.data[i].name
         product.description = response.data[i].description
         product.price = response.data[i].price.formatted_with_symbol
@@ -31,5 +37,4 @@ export class ListProductsComponent implements OnInit {
       }
     })
   }
-
 }
