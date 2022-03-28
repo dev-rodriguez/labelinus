@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   environment: 'local',
   commerceKey: 'pk_test_410719bc6043d4ebfa339c8a9db5aaf4d6c4605ec731d',
-  commerceURL: 'https://api.chec.io/v1/products'
+  commerceURL: 'https://api.chec.io/v1'
 };
 
 
