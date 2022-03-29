@@ -95,10 +95,78 @@
     font-size: medium;
     font-weight: bolder;
     color: grey;
+    &:hover {
+        cursor: pointer;
+        color: rgb(194, 5, 5);
+    }
 }
 
 .summary {
     font-size: 25px;
     color: grey;
     margin-bottom: 30px;
+}
+
+.items-spinner {
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.empty-cart {
+    font-size: 20px;
+    color: rgb(145, 145, 145);
+    font-weight: bold;
+}
+
+.checkout-text {
+    padding-top: 20px;
+    color: grey;
+}
+
+.checkout-text-labels {
+    font-size: 15px;
+}
+
+.labelin-button { 
+    font-size: larger;
+    font-weight: bolder;
+    color: #FFFFFF;
+    background-color: #3D484F;
+    border-radius: 30px;
+    padding: 15px;
+    width: 230px;
+    align-items: center;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.button-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkout-button-label {
+    padding-left: 10px;
+}
+
+.chcekout-button-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: rgb(187, 187, 187);
 }

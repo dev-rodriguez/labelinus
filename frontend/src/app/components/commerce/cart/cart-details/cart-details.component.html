@@ -3,22 +3,29 @@
     <span class="cart-subtitle">You have {{cart.total_items}} items in your cart</span>
     <div class="cart-items">
         <div class="items">
-            <div *ngFor="let product of products" class="cart-item">
+            <div *ngIf="spinner" class="items-spinner">
+                <mat-spinner></mat-spinner>
+            </div>
+            <div class="empty-cart-container" *ngIf="cart.total_items == 0">
+                <img src="../../../../../assets/img/empty-cart.png">
+                <span class="empty-cart">Empty Cart &nbsp;&nbsp; =(</span>
+            </div>
+            <div *ngFor="let item of items" class="cart-item">
                 <div class="cart-item-img-container">
-                    <img class="cart-item-img" src={{product.imageUrl}}>
+                    <img class="cart-item-img" src={{item.product.imageUrl}}>
                 </div>
                 <div class="cart-item-info-container">
                     <div class="cart-item-info-details">
-                        <span>{{product.name}}</span>
+                        <span>{{item.product.name}}</span>
                     </div>   
                     <div class="cart-item-info-actions">
                         <div class="cart-item-info-quantity">
-                            <span>2</span>
+                            <span>{{item.quantity}}</span>
                         </div>
                         <div class="cart-item-info-price">
-                            <span>{{product.price}}</span>
+                            <span>{{item.itemPrice}}</span>
                         </div>
-                        <div class="cart-item-info-delete-button">
+                        <div (click)="dropItem(item)" class="cart-item-info-delete-button">
                             <span class="material-icons">
                                 delete
                             </span>
@@ -30,8 +37,31 @@
         <div class="checkout">
             <span class="summary">Summary</span>
             <mat-divider></mat-divider>
-            <p>Estimate Shipping and Tax</p>
-            <p>Enter your destination to get a shipping estimate.</p>
+            <div class="checkout-text">
+                <p class="checkout-text-labels">Estimate Shipping and Tax</p>
+                <p>Enter your destination to get a shipping estimate.</p>
+            </div>
+
+            <div class="checkout-text">
+                <h2>Shipping</h2>
+            </div>
+            <div class="checkout-text">
+                <h2>Subtotal</h2>
+            </div>
+            <div class="checkout-text">
+                <h2>Tax</h2>
+            </div>
+            <div class="checkout-text">
+                <h2>Total</h2>
+            </div>
+            <div class="chcekout-button-container">
+                <button class="labelin-button">
+                    <div class="button-content">
+                        <span class="material-icons">lock</span>
+                        <span class="checkout-button-label">Checkout</span>
+                    </div>
+                </button>
+            </div>
         </div>
     </div>
 </div>
