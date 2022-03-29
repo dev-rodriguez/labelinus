@@ -1,8 +1,8 @@
 import { Product } from "./product";
 
 export interface Item {
-    id: String;
+    id: string;
     product: Product
-    quantity: Number
-    itemPrice: String
+    quantity: number
+    itemPrice: string
 }
