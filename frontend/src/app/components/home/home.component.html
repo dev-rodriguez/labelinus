@@ -111,13 +111,13 @@
     <div class="contact-form">
       <form autocomplete="off" [formGroup]="miFormulario" (ngSubmit)="guardar()">
         <div>
-          <mat-form-field  appearance="fill">
+          <mat-form-field  appearance="outline">
             <mat-label>First Name</mat-label>
             <input  formControlName="firstName" matInput placeholder="First Name" />
             <mat-error *ngIf="campoNoValido('firstName')">First Name is required</mat-error>
             <mat-hint>Required</mat-hint>
           </mat-form-field>
-          <mat-form-field  appearance="fill">
+          <mat-form-field  appearance="outline">
             <mat-label>Last Name</mat-label>
             <input  formControlName="lastName" matInput placeholder="Last Name" />
             <mat-error *ngIf="campoNoValido('lastName')">Last Name is required</mat-error>
@@ -125,13 +125,13 @@
           </mat-form-field>
         </div>
         <div>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="outline">
             <mat-label>Phone</mat-label>
             <input type="tel" matInput placeholder="+1 12345678" formControlName="phone">
             <mat-error *ngIf="campoNoValido('phone')">Phone is required</mat-error>
             <mat-hint>Required</mat-hint>
           </mat-form-field>
-          <mat-form-field  appearance="fill">
+          <mat-form-field  appearance="outline">
             <mat-label>Email</mat-label>
             <input matInput placeholder="email@email.com" formControlName="email">
             <mat-error *ngIf="campoNoValido('email')">{{emailErrorMsg()}}</mat-error>
@@ -139,7 +139,7 @@
           </mat-form-field>
         </div>
         <div>
-          <mat-form-field id="last-item" appearance="fill">
+          <mat-form-field id="last-item" appearance="outline">
             <mat-label>Message </mat-label>
             <textarea formControlName="message" matInput></textarea>
             <mat-error *ngIf="campoNoValido('message')">{{maxCaracteresErrorMsg('message', 'Message')}}</mat-error>
