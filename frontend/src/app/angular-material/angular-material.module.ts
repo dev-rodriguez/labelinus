@@ -21,6 +21,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [],
@@ -47,8 +48,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSortModule,
     MatDialogModule,
     MatSlideToggleModule,
-    MatMenuModule
-    
+    MatMenuModule,
+    MatBadgeModule  
   ],
   imports: []
 })
