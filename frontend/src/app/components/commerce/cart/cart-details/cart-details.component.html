@@ -1,67 +1,130 @@
 <div class="container-cart">
-    <h1 class="cart-title">Shopping Cart</h1>
-    <span class="cart-subtitle">You have {{cart.total_items}} items in your cart</span>
-    <div class="cart-items">
-        <div class="items">
-            <div *ngIf="spinner" class="items-spinner">
-                <mat-spinner></mat-spinner>
-            </div>
-            <div class="empty-cart-container" *ngIf="cart.total_items == 0">
-                <img src="../../../../../assets/img/empty-cart.png">
-                <span class="empty-cart">Empty Cart &nbsp;&nbsp; =(</span>
-            </div>
-            <div *ngFor="let item of items" class="cart-item">
-                <div class="cart-item-img-container">
-                    <img class="cart-item-img" src={{item.product.imageUrl}}>
-                </div>
-                <div class="cart-item-info-container">
-                    <div class="cart-item-info-details">
-                        <span>{{item.product.name}}</span>
-                    </div>   
-                    <div class="cart-item-info-actions">
-                        <div class="cart-item-info-quantity">
-                            <span>{{item.quantity}}</span>
-                        </div>
-                        <div class="cart-item-info-price">
-                            <span>{{item.itemPrice}}</span>
-                        </div>
-                        <div (click)="dropItem(item)" class="cart-item-info-delete-button">
-                            <span class="material-icons">
-                                delete
-                            </span>
-                        </div>
-                    </div>         
-                </div>
-            </div>
+  <h1 class="cart-title">Shopping Cart</h1>
+  <span class="cart-subtitle">You have {{cart.total_items}} items in your cart</span>
+  <div class="cart-items">
+    <div class="items">
+      <div *ngIf="spinner" class="items-spinner">
+        <mat-spinner></mat-spinner>
+      </div>
+      <div class="empty-cart-container" *ngIf="cart.total_items == 0">
+        <img src="../../../../../assets/img/empty-cart.png">
+        <span class="empty-cart">Empty Cart &nbsp;&nbsp; =(</span>
+      </div>
+      <div *ngFor="let item of items" class="cart-item">
+        <div class="cart-item-img-container">
+          <img class="cart-item-img" src={{item.product.imageUrl}}>
         </div>
-        <div class="checkout">
-            <span class="summary">Summary</span>
-            <mat-divider></mat-divider>
-            <div class="checkout-text">
-                <p class="checkout-text-labels">Estimate Shipping and Tax</p>
-                <p>Enter your destination to get a shipping estimate.</p>
+        <div class="cart-item-info-container">
+          <div class="cart-item-info-details">
+            <span>{{item.product.name}}</span>
+          </div>
+          <div class="cart-item-info-actions">
+            <button mat-icon-button (click)="updateItemQuantity(item, '-')" class="button-quantity">
+                <mat-icon>remove_circle</mat-icon>
+              </button>
+            <div class="cart-item-info-quantity">
+              <span>{{item.quantity}}</span>
             </div>
-
-            <div class="checkout-text">
-                <h2>Shipping</h2>
+            <button mat-icon-button (click)="updateItemQuantity(item, '+')" class="button-quantity">
+                <mat-icon>add_circle</mat-icon>
+              </button>
+            <div class="cart-item-info-price">
+              <span>{{item.itemPrice}}</span>
             </div>
-            <div class="checkout-text">
-                <h2>Subtotal</h2>
+            <div (click)="dropItem(item)" class="cart-item-info-delete-button">
+              <span class="material-icons">
+                delete
+              </span>
             </div>
-            <div class="checkout-text">
-                <h2>Tax</h2>
-            </div>
-            <div class="checkout-text">
-                <h2>Total</h2>
-            </div>
-            <div class="chcekout-button-container">
-                <button class="labelin-button">
-                    <div class="button-content">
-                        <span class="material-icons">lock</span>
-                        <span class="checkout-button-label">Checkout</span>
-                    </div>
-                </button>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
+    <div class="checkout">
+      <span class="summary">Summary</span>
+      <mat-divider></mat-divider>
+      <div class="checkout-text">
+        <span class="checkout-text-labels">Estimate Shipping and Tax</span>
+      </div>
+
+      <div class="checkout-text">
+        <h2>Shipping</h2>
+        <span>Enter your destination to get a shipping estimate.</span>
+        <div class="contact-form">
+          <form autocomplete="off" [formGroup]="shippingForm">
+            <div class="contact-form">
+              <mat-form-field appearance="outline">
+                <mat-label>Address Line 1</mat-label>
+                <input formControlName="addressLine1" matInput placeholder="Elm Street 1" />
+                <mat-error *ngIf="notValidField('addressLine1')">Address Line 1 is required</mat-error>
+                <mat-hint>Required</mat-hint>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Address Line 2</mat-label>
+                <input formControlName="addressLine2" matInput placeholder="Elm street drive" />
+                <mat-hint>Optional</mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="contact-form-line">
+              <mat-form-field appearance="outline">
+                <mat-label>City</mat-label>
+                <input matInput placeholder="Springfield" formControlName="city">
+                <mat-error *ngIf="notValidField('city')">City is required</mat-error>
+                <mat-hint>Required</mat-hint>
+              </mat-form-field>
+              <mat-form-field class="space-contact" appearance="outline">
+                <mat-label>State</mat-label>
+                <select matNativeControl required>
+                  <option *ngFor= "let state of states" value="state">{{state}}</option>
+                </select>
+              </mat-form-field>
+            </div>
+            <div class="contact-form-line">
+                <mat-form-field appearance="outline">
+                  <mat-label>Zip Code</mat-label>
+                  <input matInput placeholder="92693" formControlName="zipCode">
+                  <mat-error *ngIf="notValidField('zipCode')">ZipCode is required</mat-error>
+                  <mat-hint>Required</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="contact-form-line" style="margin-top: 10px;">
+                <mat-form-field appearance="outline">
+                    <mat-label>Shipping Option</mat-label>
+                    <select matNativeControl required>
+                      <option>Free Shipping 3-10 Days</option>
+                      <option>Premium Shipping 2-7 Days (+ $5.00)</option>
+                    </select>
+                </mat-form-field>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="checkout-text">
+          <div class="price-tag">
+            <div class="price-label"><h2>Subtotal</h2></div>
+            <div class="price-value"><span>{{cart.subtotal.formatted_with_symbol}}</span></div>
+          </div>
+      </div>
+      <div class="checkout-text price">
+        <div class="price-tag">
+            <div class="price-label"><h2>Tax</h2></div>
+            <div class="price-value"><span>$0.00</span></div>
+        </div>
+      </div>
+      <div class="checkout-text price">
+        <div class="price-tag">
+            <div class="price-label"><h2>Total</h2></div>
+            <div class="price-value"><span>{{cart.subtotal.formatted_with_symbol}}</span></div>
+        </div>
+      </div>
+      <div class="chcekout-button-container">
+        <button class="labelin-button">
+          <div class="button-content">
+            <span class="material-icons">lock</span>
+            <span class="checkout-button-label">Checkout</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

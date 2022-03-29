@@ -25,13 +25,13 @@
 }
 
 .items {
-    width: 70%;
+    width: 55%;
 }
 
 .checkout {
-    width: 30%;
+    width: 45%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding: 20px;
+    padding: 40px;
     background-color: rgb(223, 222, 222);
     border-radius: 10px;
     margin-left: 30px;
@@ -45,6 +45,7 @@
     padding: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-bottom: 20px;
+    height: 100px;
 }
 
 .cart-item-img-container{
@@ -76,11 +77,19 @@
 }
 
 .cart-item-info-quantity {
-    padding: 20px;
+    padding: 10px;
     font-size: medium;
     font-weight: bolder;
     color: grey;
+    border: solid;
+    border-color: grey;
+    border-width: 1px;
+    border-radius: 8px;
 
+}
+
+.button-quantity {
+    color: grey;
 }
 
 .cart-item-info-price {
@@ -133,6 +142,8 @@
 
 .checkout-text-labels {
     font-size: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 .labelin-button { 
@@ -163,10 +174,54 @@
 .chcekout-button-container{
     display: flex;
     justify-content: center;
-    padding-top: 10px;
+    padding-top: 15px;
     padding-bottom: 10px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-line {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.space-contact {
+    margin-left: 20px;
+}
+
+.price {
+    margin-top: -45px;
+}
+
+.price-tag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.price-label {
+    display: flex;
+    padding-top: 18px;
+    align-items: center;
+    width: 20%;
+}
+
+.price-value {
+    display: flex;
+    width: 80%;
+    font-size: 18px;
 }
 
 ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
     stroke: rgb(187, 187, 187);
 }
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: white;
+    border-radius: 5px;
+    border-color: #3D484F;
+  }
