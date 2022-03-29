@@ -9,6 +9,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { HttpClientModule } from '@angular/common/http';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -51,6 +53,8 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatBadgeModule,
     MatDividerModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
     IvyCarouselModule,
     HttpClientModule,
     RouterModule.forRoot(
